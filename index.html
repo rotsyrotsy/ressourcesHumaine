@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Liste</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light navigation-clean-button" style="height: 50px;">
+        <div class="container"><a class="navbar-brand" href="#">Ressources Humaines</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item d-lg-flex align-items-lg-center"><a class="nav-link active" href="#">Liste Employés</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#"><img class="rounded-circle" width="40" height="40" src="assets/img/anime3.png"></a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">Profile</a><a class="dropdown-item" href="#">Se déconnecter&nbsp;</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="card">
+        <div class="card-body" style="margin: 100px 160px;height: 10px;">
+            <h4 class="card-title">Rechercher</h4>
+            <p>Rechercher employés par type de contrat :</p>
+            <select class="custom-select custom-select-lg" style="width: 500px;">
+                <optgroup label="This is a group">
+                </optgroup>
+            </select><button class="btn btn-primary" type="button" style="background: linear-gradient(-24deg, rgb(18,26,218), rgb(37,45,86));border-style: none;">Valider</button>
+        </div>
+        <div class="card-body">
+            <h4 class="text-center card-title">Liste</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Email</th>
+                            <th>Poste</th>
+                            <th>Type de Contrat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ranadison</td>
+                            <td>Diamondra</td>
+                            <td>diams@gmail.com</td>
+                            <td>Experte en réseau</td>
+                            <td>Essai</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Rabearimanana</td>
+                            <td>Fanjava</td>
+                            <td>fanjava@gmail.com</td>
+                            <td>Analyste de données&nbsp;</td>
+                            <td>CDD</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Rakoto</td>
+                            <td>Jean</td>
+                            <td>jean@gmail.com</td>
+                            <td>Développeur web&nbsp;</td>
+                            <td>CDI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
