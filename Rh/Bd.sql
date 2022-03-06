@@ -19,13 +19,13 @@ CREATE TABLE employe(
 CREATE TABLE poste(
 	id varchar(10) PRIMARY KEY,
 	nom varchar(100)
-	);
+);
 
 CREATE TABLE typeContrat(
-		id varchar(10) PRIMARY KEY,
-		designation varchar(100),
-		dureeMax INTEGER
-		);
+	id varchar(10) PRIMARY KEY,
+	designation varchar(100),
+	dureeMax INTEGER
+);
 	
 CREATE TABLE contrat(
 	id varchar(10),
