@@ -3,17 +3,17 @@ create database ressourceH;
 
 alter database ressourceH owner to izahay;
 
-drop table contrat cascade;
-drop table typeContrat cascade;
-drop table employe cascade;
-drop table poste cascade;
+-- drop table contrat cascade;
+-- drop table typeContrat cascade;
+-- drop table employe cascade;
+-- drop table poste cascade;
 
-drop sequence inc_employe;
-drop sequence inc_poste;
-drop sequence inc_typecontrat;
-drop sequence inc_contrat
+-- drop sequence inc_employe;
+-- drop sequence inc_poste;
+-- drop sequence inc_typecontrat;
+-- drop sequence inc_contrat
 
-drop view contratEmploye;
+-- drop view contratEmploye;
 
 \connect ressourceH;
 CREATE sequence inc_employe;
