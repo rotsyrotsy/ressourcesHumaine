@@ -1,19 +1,19 @@
-CREATE ROLE izahay LOGIN PASSWORD '1234';
-create database ressourceH;
+-- CREATE ROLE izahay LOGIN PASSWORD '1234';
+-- create database ressourceH;
 
-alter database ressourceH owner to izahay;
+-- alter database ressourceH owner to izahay;
 
--- drop table contrat cascade;
--- drop table typeContrat cascade;
--- drop table employe cascade;
--- drop table poste cascade;
+drop table contrat cascade;
+drop table typeContrat cascade;
+drop table employe cascade;
+drop table poste cascade;
 
--- drop sequence inc_employe;
--- drop sequence inc_poste;
--- drop sequence inc_typecontrat;
--- drop sequence inc_contrat
+drop sequence inc_employe;
+drop sequence inc_poste;
+drop sequence inc_typecontrat;
+drop sequence inc_contrat
 
--- drop view contratEmploye;
+drop view contratEmploye;
 
 \connect ressourceH;
 CREATE sequence inc_employe;
@@ -68,3 +68,7 @@ select e.*,c.debut as debutContrat ,c.duree as dureeContrat,t.designation as typ
 join contrat c on e.id=c.idEmploye 
 join typeContrat t on t.id=c.idTypeContrat
 join poste p on p.id=c.idPoste); 
+
+create view datedemploiyement as (
+
+);
