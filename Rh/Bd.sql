@@ -51,7 +51,7 @@ CREATE TABLE contrat(
 	debut date,
 	duree int,
 	idPoste varchar(10),
-	FOREIGN KEY(idEmploye) references employe(id),C)
+	FOREIGN KEY(idEmploye) references employe(id),
 	FOREIGN KEY(idTypeContrat)references typeContrat(id),
 	FOREIGN KEY(idPoste)references poste(id)
 );
