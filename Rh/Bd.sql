@@ -22,7 +22,7 @@ CREATE sequence inc_typecontrat;
 CREATE sequence inc_contrat;
 
 CREATE TABLE employe(
-    id  varchar(10) PRIMARY KEY,
+    id  varchar(10) PRIMARY KEY default 'employe'||nextval('inc_employe'),
     nom VARCHAR(100),
     prenom VARCHAR(100),
     email varchar(100),  
@@ -34,18 +34,18 @@ CREATE TABLE employe(
 );
 
 CREATE TABLE poste(
-	id varchar(10) PRIMARY KEY,
+	id varchar(10) PRIMARY KEY default 'poste'||nextval('inc_poste'),
 	nom varchar(100)
 );
 
 CREATE TABLE typeContrat(
-	id varchar(10) PRIMARY KEY,
+	id varchar(10) PRIMARY KEY default 'type'||nextval('inc_typecontrat'),
 	designation varchar(100),
 	dureeMax INTEGER
 );
 	
 CREATE TABLE contrat(
-	id varchar(10),
+	id varchar(10) PRIMARY KEY default 'contrat'||nextval('inc_contrat'),
 	idEmploye varchar(10),
 	idTypeContrat varchar(10),
 	debut date,
