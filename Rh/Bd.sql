@@ -56,12 +56,12 @@ CREATE TABLE contrat(
 	FOREIGN KEY(idPoste)references poste(id)
 );
 
-insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(1,1,1,'2022-01-01',3,2);
-insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(2,2,2,'2019-05-06',null,1);
-insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(6,3,3,'2021-12-06',24,2);
-insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(3,3,3,'2021-02-02',8,2);
-insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(4,4,2,'2020-03-06',null,2);
-insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(5,5,3,'2019-06-11',16,1);
+-- insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(1,1,1,'2022-01-01',3,2);
+-- insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(2,2,2,'2019-05-06',null,1);
+-- insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(6,3,3,'2021-12-06',24,2);
+-- insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(3,3,3,'2021-02-02',8,2);
+-- insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(4,4,2,'2020-03-06',null,2);
+-- insert into contrat(id,idEmploye,idTypeContrat,debut,duree,idPoste)values(5,5,3,'2019-06-11',16,1);
 
 create view contratEmploye as (
 select e.*,c.debut as debutContrat ,c.duree as dureeContrat,t.designation as typeContrat,p.nom as poste from employe as e 
