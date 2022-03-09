@@ -1,10 +1,28 @@
-CREATE ROLE izahay LOGIN PASSWORD '1234';
-create database ressourceH;
+-- CREATE ROLE izahay LOGIN PASSWORD '1234';
+-- create database ressourceH;
 
-alter database ressourceH owner to izahay;
+-- alter database ressourceH owner to izahay;
 
+-- \connect ressourceH;
 
-\connect ressourceH;
+drop table contrat cascade;
+drop table typeContrat cascade;
+drop table employe cascade;
+drop table poste cascade;
+
+drop sequence inc_employe;
+drop sequence inc_poste;
+drop sequence inc_typecontrat;
+drop sequence inc_contrat
+
+drop view contratEmploye;
+
+-- \connect ressourceH;
+CREATE sequence inc_employe;
+CREATE sequence inc_poste;
+CREATE sequence inc_typecontrat;
+CREATE sequence inc_contrat;
+
 
 CREATE TABLE employe(
     id  varchar(10) PRIMARY KEY,
@@ -34,7 +52,7 @@ CREATE TABLE contrat(
 	debut date,
 	duree int,
 	idPoste varchar(10),
-	FOREIGN KEY(idEmploye) references employe(id),C)
+	FOREIGN KEY(idEmploye) references employe(id),
 	FOREIGN KEY(idTypeContrat)references typeContrat(id),
 	FOREIGN KEY(idPoste)references poste(id)
 );
