@@ -2,11 +2,19 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>EmployeController</servlet-name>
-        <servlet-class>Controller.EmployeController</servlet-class>
+        <servlet-class>Controller.AjoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RechercheController</servlet-name>
+        <servlet-class>Controller.RechercheController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EmployeController</servlet-name>
         <url-pattern>/EmployeController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RechercheController</servlet-name>
+        <url-pattern>/RechercheController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
