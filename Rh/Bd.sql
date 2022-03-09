@@ -20,6 +20,12 @@ CREATE sequence inc_employe;
 CREATE sequence inc_poste;
 CREATE sequence inc_typecontrat;
 CREATE sequence inc_contrat;
+CREATE sequence inc_conges;
+CREATE sequence inc_avance;
+CREATE sequence inc_salaire;
+CREATE sequence inc_tranche;
+CREATE sequence inc_histotiq;
+CREATE sequence inc_cot;
 
 CREATE TABLE employe(
     id  varchar(10) PRIMARY KEY default 'employe'||nextval('inc_employe'),
@@ -79,7 +85,7 @@ CREATE TABLE paiementSalaire(
 );
 
 CREATE TABLE cotisation(
-	id varchar(10),
+	id varchar(10) PRIMARY KEY default 'cotisation'||nextval('inc_cot'),
 	designation varchar(100),
 	partEmploye INTEGER,
 	partEntreprise INTEGER
@@ -140,24 +146,24 @@ insert into paiementSalaire(modePaiement)values('virement');
 insert into paiementSalaire(modePaiement)values('especes');
 insert into paiementSalaire(modePaiement)values('cheque');
 
-create view dateEmbauche as (
-select e.*,c.debut as debutContrat ,c.duree as dureeContrat,t.designation as typeContrat,p.nom as poste from employe as e 
-join contrat c on e.id=c.idEmploye 
+create or replace view dateEmbauche as 
+select debut from contrat where idTypeContrat!=1 ;
+
+create or replace view ListEmploye as (
+select e.nom, e.prenom, p.nom as poste ,t.designation as Contrat, 
+dateEmbauche.debut as dateEmbauche , e.CIN as matricule from employe as e
+join poste p on p.id=c.idPoste
 join typeContrat t on t.id=c.idTypeContrat
-join poste p on p.id=c.idPoste); 
-
-create view soldeConge_mois as (
-
 );
 
-create view soldeConge_ans as (
-
+create or replace view montantSalaireNet as (
+select (c.salaireBase-(c.salaireBase*sum(cotisation.partEmploye)))-a.montant as salairefinal, from contrat as c
+left join avance a on c.id=a.idcontrat
 );
 
-create view montantSalaireNet as (
 
-);
-
-create view vueEmploye as (
-
-);
+-- select e.*,c.debut as debutContrat ,c.duree as dureeContrat,
+-- t.designation as typeContrat,p.nom as poste from employe as e 
+-- join contrat c on e.id=c.idEmploye 
+-- join typeContrat t on t.id=c.idTypeContrat
+-- join poste p on p.id=c.idPoste); 
