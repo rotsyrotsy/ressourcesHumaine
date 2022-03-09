@@ -121,12 +121,12 @@ insert into conges(type,label)values('non payant','raison medical');
 insert into cotisation(designation,partEmploye,partEntreprise)values('CNAPS',1%,12%);
 insert into cotisation(designation,partEmploye,partEntreprise)values('OSTIE',1%,5%);
 
-insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values(1,1,'2022-01-01',3,2,200000);
-insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values(2,2,'2019-05-06',null,1,1000000);
-insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values(3,3,'2021-12-06',24,2,500000);
-insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values(3,3,'2021-02-02',8,2,500000);
-insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values(4,2,'2020-03-06',null,2,1000000);
-insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values(5,3,'2019-06-11',16,1,500000);
+insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values('employe1','type1','2022-01-01',3,2,200000);
+insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values('employe2','type2','2019-05-06',null,1,1000000);
+insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values('employe3','type3','2021-12-06',24,2,500000);
+insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values('employe3','type3','2021-02-02',8,2,500000);
+insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values('employe4','type2','2020-03-06',null,2,1000000);
+insert into contrat(idEmploye,idTypeContrat,debut,duree,idPoste,salaireBase)values('employe5','type3','2019-06-11',16,1,500000);
 
 insert into irsa(min,max,taux)values(0,350000,0);
 insert into irsa(min,max,taux)values(350000,400000,5);
