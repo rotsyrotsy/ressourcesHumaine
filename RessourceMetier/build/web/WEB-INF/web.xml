@@ -8,6 +8,14 @@
         <servlet-name>RechercheController</servlet-name>
         <servlet-class>Controller.RechercheController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FormulaireRechercheController</servlet-name>
+        <servlet-class>Controller.FormulaireRechercheController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>Controller.LoginController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>EmployeController</servlet-name>
         <url-pattern>/EmployeController</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>RechercheController</servlet-name>
         <url-pattern>/RechercheController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FormulaireRechercheController</servlet-name>
+        <url-pattern>/FormulaireRechercheController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

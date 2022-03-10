@@ -6,7 +6,6 @@
 package Controller;
 
 import Service.ContratService;
-import Service.RechercheService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Hasinjaka
  */
-public class RechercheController extends HttpServlet {
+public class FormulaireRechercheController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,18 +32,13 @@ public class RechercheController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RechercheController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RechercheController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        ContratService cs=new ContratService();
+        Object[]listeContrat=cs.listeContrat();
+        Object[]listePoste=cs.listePoste();
+        request.setAttribute("listeContrat",listeContrat);
+        request.setAttribute("listePoste",listePoste);
+        RequestDispatcher dispat=request.getRequestDispatcher("RechercheEmploye.jsp");
+	dispat.forward(request,response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,22 +53,7 @@ public class RechercheController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String matricule=request.getParameter("matricule");
-        String date=request.getParameter("dateembauche");
-        String poste=request.getParameter("poste");
-        String contrat=request.getParameter("contrat");
-        String salaire=request.getParameter("salaire");
-        RechercheService rs=new RechercheService();
-        ContratService cs=new ContratService();
-        Object[]listeContrat=cs.listeContrat();
-        Object[]listePoste=cs.listePoste();
-        request.setAttribute("listeContrat",listeContrat);
-        request.setAttribute("listePoste",listePoste);
-        Object[] listeRecherche=rs.recherche(matricule, poste, contrat, date, salaire);
-        request.setAttribute("liste",listeRecherche);
-        RequestDispatcher dispat=request.getRequestDispatcher("RechercheEmploye.jsp");
-        request.setAttribute("recherche",1);
-	dispat.forward(request,response);
+        processRequest(request, response);
     }
 
     /**
@@ -88,7 +67,7 @@ public class RechercheController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
     }
 
     /**

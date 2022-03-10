@@ -22,6 +22,6 @@ ArrayList<Employe> list=(ArrayList<Employe>)request.getAttribute("liste");
         <% for(int i=0; i<list.size(); i++) { %>
             <%out.println(list.get(i).getNom());%>
         <%}%>
-        <p><a href="RechercheEmploye.jsp">Chercher Employe</a></p>
+        <p><a href="FormulaireRechercheController">Chercher Employe</a></p>
     </body>
 </html>

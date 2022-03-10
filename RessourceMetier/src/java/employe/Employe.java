@@ -14,15 +14,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Employe {
-    private String idEmploye;
-    private String nom;
-    private String prenom;    
-    private Date dateNaissance;
-    private String sexe;
-    private String email;
-    private String adresse;
-    private String CIN;
-    private String mdp;
+    public String idEmploye;
+    public String nom;
+    public String prenom;    
+    public Date dateNaissance;
+    public String sexe;
+    public String email;
+    public String adresse;
+    public String CIN;
+    public String mdp;
     
     public Employe(){
     
